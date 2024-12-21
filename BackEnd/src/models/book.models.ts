@@ -1,4 +1,4 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Schema, model } from "mongoose";
 
 interface Book {
   title: string;
@@ -25,3 +25,7 @@ const bookSchema = new Schema<Book>(
     timestamps: true,
   }
 );
+
+const BookModel = model<Book>("Book", bookSchema);
+
+export default BookModel;
